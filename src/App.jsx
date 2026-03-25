@@ -5,7 +5,7 @@ import Courses from "./Pages/Courses";
 import Results from "./Pages/Results";
 import Profile from "./Pages/Profile";
 
-const PrivateRoute = ({ children }) => {
+const ProtectedRoute = ({ children }) => {
   const user = localStorage.getItem("user");
   return user ? children : <Navigate to="/login" replace />;
 };
@@ -15,10 +15,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-      <Route path="/courses" element={<PrivateRoute><Courses /></PrivateRoute>} />
-      <Route path="/results" element={<PrivateRoute><Results /></PrivateRoute>} />
-      <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}/>
+      <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path="/courses" element={<ProtectedRoute><Courses /></ProtectedRoute>} />
+      <Route path="/results" element={<ProtectedRoute><Results /></ProtectedRoute>} />
+      <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
     </Routes>
   );
 }

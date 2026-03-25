@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import { useLocation } from "react-router-dom";
 import {
   FaUser, FaLock, FaCog, FaCamera, FaEdit, FaSave,
   FaTimes, FaEye, FaEyeSlash, FaIdCard, FaGraduationCap,
@@ -8,8 +9,14 @@ import {
 
 const Profile = () => {
   const storedUser = JSON.parse(localStorage.getItem("user")) || {};
+  const location = useLocation();
 
   const [activeTab, setActiveTab] = useState("personal");
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("tab") === "settings") setActiveTab("settings");
+  }, [location.search]);
   const [editMode, setEditMode] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
   const [showPassword, setShowPassword] = useState({ current: false, new: false, confirm: false });
@@ -376,12 +383,12 @@ const Profile = () => {
                     </div>
                     <button
                       onClick={() => setSettings((prev) => ({ ...prev, [setting.key]: !prev[setting.key] }))}
-                      className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
+                      className={`relative inline-flex items-center w-14 h-7 rounded-full transition-colors duration-300 flex-shrink-0 ${
                         settings[setting.key] ? "bg-[#000080]" : "bg-gray-300"
                       }`}
                     >
-                      <span className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform duration-300 ${
-                        settings[setting.key] ? "translate-x-7" : "translate-x-1"
+                      <span className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-300 ${
+                        settings[setting.key] ? "translate-x-7" : "translate-x-0"
                       }`} />
                     </button>
                   </div>

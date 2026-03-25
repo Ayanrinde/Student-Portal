@@ -18,11 +18,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   return (
-    <div className="w-64 h-full bg-blue-900 text-white p-5 flex flex-col justify-between">
+    <div className="w-64 h-full bg-[#000080] text-white p-5 flex flex-col justify-between">
       <div>
         {/* Header with close button on mobile */}
         <div className="flex items-center justify-between mb-10">
-          <h1 className="text-2xl font-bold">ScholarHub</h1>
+          <h1 className="text-2xl font-bold">ScholarHub UNI</h1>
           <button
             onClick={toggleSidebar}
             className="md:hidden text-white text-xl"
@@ -35,7 +35,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <Link
             to="/dashboard"
             onClick={toggleSidebar}
-            className="flex gap-3 p-2 bg-blue-700 rounded"
+            className="flex gap-3 p-2 hover:bg-blue-700 rounded"
           >
             <FaHome /> Dashboard
           </Link>
@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <Link
             to="/courses"
             onClick={toggleSidebar}
-            className="flex gap-3 p-2 hover:bg-blue-800 rounded"
+            className="flex gap-3 p-2 hover:bg-blue-700 rounded"
           >
             <FaBook /> Courses
           </Link>
@@ -51,7 +51,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <Link
             to="/results"
             onClick={toggleSidebar}
-            className="flex gap-3 p-2 hover:bg-blue-800 rounded"
+            className="flex gap-3 p-2 hover:bg-blue-700 rounded"
           >
             <FaChartBar /> Results
           </Link>
@@ -59,14 +59,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <Link
             to="/profile"
             onClick={toggleSidebar}
-            className="flex gap-3 p-2 hover:bg-blue-800 rounded"
+            className="flex gap-3 p-2 hover:bg-blue-700 rounded"
           >
             <FaUser /> Profile
           </Link>
         </nav>
       </div>
 
-      <button onClick={handleLogout} className="flex gap-2 text-red-400">
+      <button onClick={handleLogout} className="flex items-center gap-2 w-full text-left px-3 py-2 text-sm text-red-400 hover:bg-red-50 rounded-lg transition">
         <FaSignOutAlt /> Logout
       </button>
     </div>

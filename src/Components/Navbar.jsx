@@ -69,7 +69,7 @@ const Navbar = ({ toggleSidebar }) => {
                   onClick={() => { navigate("/profile"); setDropdownOpen(false); }}
                   className="flex items-center w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition"
                 >
-                  Profile
+                  My Profile
                 </button>
                 <button
                   onClick={() => { navigate("/profile?tab=settings"); setDropdownOpen(false); }}
