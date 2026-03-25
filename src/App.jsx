@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Courses from "./pages/Courses";
-import Results from "./pages/Results";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import Courses from "./Pages/Courses";
+import Results from "./Pages/Results";
 import Profile from "./Pages/Profile";
 
 const ProtectedRoute = ({ children }) => {
