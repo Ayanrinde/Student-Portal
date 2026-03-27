@@ -52,7 +52,7 @@ const Login = () => {
         <div className="relative z-10 text-white text-center">
           <h1 className="text-5xl font-bold mb-4">ScholarHub</h1>
           <p className="text-lg text-blue-100 text-center max-w-md">
-            Welcome to ScholarHub — your all-in-one student portal for managing
+            Welcome to ScholarHub,your all-in-one student portal for managing
             courses, academic progress, and campus activities.
           </p>
         </div>
